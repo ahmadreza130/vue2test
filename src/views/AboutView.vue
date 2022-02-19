@@ -1,10 +1,10 @@
 <template>
-  <div class="about">
-    <CreateComp :create="create" />
-    <hr />
-    <div v-for="resume in resumes" :key="resume.id">
+  <div class="list">
+    <h2 class=""> RESUMES</h2>
+    <div  v-for="resume in resumes" :key="resume.id">
       <ResumeComp :resume="resume" :dlt="dlt" :edit="edit" />
     </div>
+    <CreateComp :create="create" />
   </div>
 </template>
 <script>
@@ -23,8 +23,8 @@ export default {
     this.getAll();
   },
   components: {
-   ResumeComp,
-   CreateComp
+    ResumeComp,
+    CreateComp,
   },
   methods: {
     async getAll() {
@@ -64,3 +64,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+.list{
+  margin-top: 100px;
+}
+h2{
+  text-align: center;
+}
+</style>
